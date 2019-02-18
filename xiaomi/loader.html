@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>loader.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.loader{
+			width: 4px;
+			height: 20px;
+			position: relative;
+			background-color: #ff6700;
+			margin: 0 auto;
+			transform: scale(1,1);
+			animation:loading 0.3s linear 0s infinite alternate;
+		}
+		.loader:before,
+		.loader:after{
+			content: '';
+			width: 4px;
+			height: 20px;
+			background-color: #ff6700;
+			position: absolute;
+			top:50%;
+			left:50%;
+		}
+		.loader:before{
+			transform: scale(1,0.3);
+			margin: -10px 0 0 -10px;
+			animation:loading 0.3s linear 0.5s infinite alternate;
+		}
+		.loader:after{
+			transform: scale(1,0.5);
+			margin: -10px 0 0 6px;
+			animation:loading 0.3s linear 0.3s infinite alternate;
+		}
+		@keyframes loading{
+			from{
+				opacity: 0.2;
+				transform: scale(1,0.5);
+			}
+			to{
+				transform: scale(1,1);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="loader"></div>
+</body>
+</html>

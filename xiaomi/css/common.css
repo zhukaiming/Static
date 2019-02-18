@@ -1,0 +1,62 @@
+/*
+* @Author: zhu
+* @Date:   2018-04-08 10:56:44
+* @Last Modified by:   zhu
+* @Last Modified time: 2018-04-08 14:47:16
+*/
+.container{
+	width: 1226px;
+	margin-right: auto;
+	margin-left: auto;	
+}
+.clealfix:after{
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+.clealfix{
+	*zoom:1;
+}
+body{
+	font-size: 12px;
+}
+		.loader{
+			width: 4px;
+			height: 20px;
+			position: relative;
+			background-color: #ff6700;
+			margin: 0 auto;
+			transform: scale(1,1);
+			animation:loading 0.3s linear 0s infinite alternate;
+		}
+		.loader:before,
+		.loader:after{
+			content: '';
+			width: 4px;
+			height: 20px;
+			background-color: #ff6700;
+			position: absolute;
+			top:50%;
+			left:50%;
+		}
+		.loader:before{
+			transform: scale(1,0.3);
+			margin: -10px 0 0 -10px;
+			animation:loading 0.3s linear 0.5s infinite alternate;
+		}
+		.loader:after{
+			transform: scale(1,0.5);
+			margin: -10px 0 0 6px;
+			animation:loading 0.3s linear 0.3s infinite alternate;
+		}
+		@keyframes loading{
+			from{
+				opacity: 0.2;
+				transform: scale(1,0.5);
+			}
+			to{
+				transform: scale(1,1);
+			}
+		}
